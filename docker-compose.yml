@@ -7,7 +7,4 @@ services:
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
     volumes:
       - ./data:/data
-    ports:
-      - ${MINIO_PORT:-9000}:9000
-      - ${MINIO_CONSOLE_PORT:-9001}:9001
-    command: server /data --console-address ":9001"
+    command: server /data --address ':${MINIO_PORT}' --console-address ':${MINIO_CONSOLE_PORT}'
