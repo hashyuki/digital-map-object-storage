@@ -4,14 +4,14 @@
 
 1. `.env`を以下のように作成する
 
-```.env
-MINIO_ROOT_USER=<your_username>
-MINIO_ROOT_PASSWORD=<your_password>
-MINIO_PORT=9000
-MINIO_CONSOLE_PORT=9001
-MINIO_CLIENT_ACCESS_KEY=<your_access_key>
-MINIO_CLIENT_SECRET_KEY=<your_secret_key>
-```
+   ```.env
+   MINIO_ROOT_USER=<your_username>
+   MINIO_ROOT_PASSWORD=<your_password>
+   MINIO_PORT=9000
+   MINIO_CONSOLE_PORT=9001
+   MINIO_CLIENT_ACCESS_KEY=<your_access_key>
+   MINIO_CLIENT_SECRET_KEY=<your_secret_key>
+   ```
 
 1. 環境変数の export
 
@@ -35,6 +35,7 @@ MINIO_CLIENT_SECRET_KEY=<your_secret_key>
 
 1. minio client の準備
    ```
+   $ brew install minio/stable/mc
    $ mc alias set admin lhttp://127.0.0.1:${MINIO_PORT} $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD
    $ mc admin info local
    ```
