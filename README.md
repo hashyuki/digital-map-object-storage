@@ -36,7 +36,7 @@
 1. minio client の準備
    ```
    $ brew install minio/stable/mc
-   $ mc alias set admin lhttp://127.0.0.1:${MINIO_PORT} $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD
+   $ mc alias set local http://127.0.0.1:${MINIO_PORT} $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD
    $ mc admin info local
    ```
 1. access-key の作成
@@ -44,7 +44,7 @@
    ```
    $ mc admin user svcacct add \
    --access-key $MINIO_CLIENT_ACCESS_KEY \
-   --secret-key $MINIO_SECRET_KEY \
+   --secret-key $MINIO_CLIENT_SECRET_KEY \
    local $MINIO_ROOT_USER
    ```
 
